@@ -18,12 +18,10 @@ body {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(12px);
 
-  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1),
+              0 0 40px rgba(196,154,108,0.3);
 }
 
-.card {
-  box-shadow: 0 0 40px rgba(196,154,108,0.3);
-}
 /* Title */
 h1 {
   margin: 0;
@@ -56,6 +54,7 @@ h1 {
   color: #7a2e2e;
   cursor: pointer;
   transition: 0.3s;
+  background: transparent;
 }
 
 .upload-btn:hover {

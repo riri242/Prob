@@ -6,130 +6,43 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
-
-  <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: #f5f5f5;
-      text-align: center;
-      padding: 30px;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      width: 350px;
-      margin: auto;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .upload-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #2c3e50;
-      color: white;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    input[type="file"] {
-      display: none;
-    }
-
-    #cropImage {
-      max-width: 100%;
-      margin-top: 15px;
-    }
-
-    #finalImage {
-      max-width: 100%;
-      margin-top: 15px;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      border: none;
-      background: #27ae60;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="card">
 
-  <h2>فعالية الملكية الفكرية</h2>
+  <h1>
+    <span class="light">فعالية</span>
+    <span class="main">الملكية الفكرية</span>
+  </h1>
+
+  <p class="subtitle">أضف إطار الفعالية لصورتك</p>
 
   <label class="upload-btn">
     اختر صورة
     <input type="file" id="upload">
   </label>
 
-  <img id="cropImage">
+  <br><br>
 
-  <button onclick="applyCrop()">قص الصورة</button>
+  <img id="cropImage" style="max-width:100%; display:none;">
 
-  <button onclick="download()">تحميل</button>
+  <br>
 
-  <div>
-    <img id="finalImage">
-  </div>
+  <button onclick="applyCrop()" class="upload-btn">قص الصورة</button>
+
+  <button onclick="download()" class="upload-btn">تحميل</button>
+
+  <br><br>
+
+  <img id="finalImage" style="max-width:100%; border-radius:10px;">
 
 </div>
 
 <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
-
-<script>
-let cropper;
-
-const upload = document.getElementById("upload");
-const cropImg = document.getElementById("cropImage");
-const finalImage = document.getElementById("finalImage");
-
-/* upload */
-upload.onchange = (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-
-  const url = URL.createObjectURL(file);
-  cropImg.src = url;
-
-  if (cropper) cropper.destroy();
-
-  cropper = new Cropper(cropImg, {
-    aspectRatio: 4 / 5,
-    viewMode: 1
-  });
-};
-
-/* crop */
-function applyCrop() {
-  if (!cropper) return;
-
-  const canvas = cropper.getCroppedCanvas({
-    width: 1080,
-    height: 1350
-  });
-
-  finalImage.src = canvas.toDataURL("image/png");
-}
-
-/* download */
-function download() {
-  if (!finalImage.src) return;
-
-  const link = document.createElement("a");
-  link.download = "image.png";
-  link.href = finalImage.src;
-  link.click();
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
