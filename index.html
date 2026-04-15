@@ -12,36 +12,38 @@
 
 <body>
 
-<div class="card">
+<!-- شاشة الرفع -->
+<div class="upload-screen" id="uploadScreen">
 
-  <h1>
-    <span class="light">فعالية</span>
-    <span class="main">الملكية الفكرية</span>
-  </h1>
+  <div class="card">
 
-  <p class="subtitle">ارفع صورتك وسيتم تطبيق القالب عليها</p>
+    <h1>
+      <span class="main">تيك برو توك</span>
+    </h1>
 
-  <label class="upload-btn">
-    اختر صورة
-    <input type="file" id="upload">
-  </label>
+    <p class="subtitle">أضف إطار الفعالية لصورتك</p>
 
-  <br><br>
-
-  <!-- 🔥 هذا هو القالب النهائي -->
-  <div id="canvas">
-
-    <div class="image-box">
-      <img id="finalImage">
-    </div>
-
-    <div class="frame"></div>
+    <label class="btn">
+      اختر صورة
+      <input type="file" id="upload">
+    </label>
 
   </div>
 
-  <br>
+</div>
 
-  <button class="upload-btn" onclick="downloadImage()">
+<!-- شاشة القالب -->
+<div class="editor-screen hidden" id="editorScreen">
+
+  <div id="canvas" class="canvas">
+
+    <img id="finalImage" />
+
+    <div class="overlay"></div>
+
+  </div>
+
+  <button class="btn" onclick="downloadImage()">
     تحميل الصورة
   </button>
 
