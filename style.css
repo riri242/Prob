@@ -1,0 +1,83 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #f4f1ec;
+  text-align: center;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+input, textarea {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Crop */
+.crop-container {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.crop-container img {
+  max-width: 100%;
+}
+
+/* Canvas */
+.canvas {
+  width: 360px; /* preview */
+  height: 450px;
+  position: relative;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Background image */
+#finalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Template overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text safe area */
+.text-area {
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+  right: 40px;
+  text-align: center;
+}
+
+.text-area h2 {
+  font-size: 22px;
+  color: #7a2e2e;
+}
+
+.text-area p {
+  font-size: 15px;
+  color: #5a3b2e;
+  line-height: 1.6;
+}
+
+button {
+  padding: 10px 20px;
+  background: #7a2e2e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
