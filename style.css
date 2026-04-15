@@ -1,83 +1,68 @@
 body {
+  margin: 0;
   font-family: 'Cairo', sans-serif;
-  background: #f4f1ec;
+  background: linear-gradient(135deg, #f5efe7, #e9dccf);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  width: 500px;
+  padding: 50px;
+  border-radius: 25px;
   text-align: center;
+
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
 }
 
-.container {
-  margin-top: 20px;
+.card {
+  box-shadow: 0 0 40px rgba(196,154,108,0.3);
+}
+/* Title */
+h1 {
+  margin: 0;
+  font-size: 40px;
 }
 
-input, textarea {
-  width: 300px;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+.light {
+  color: #6d6d6d;
+  font-weight: 400;
 }
 
-/* Crop */
-.crop-container {
-  width: 300px;
-  height: 300px;
-  margin: auto;
-}
-
-.crop-container img {
-  max-width: 100%;
-}
-
-/* Canvas */
-.canvas {
-  width: 360px; /* preview */
-  height: 450px;
-  position: relative;
-  margin: 20px auto;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-/* Background image */
-#finalImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Template overlay */
-.overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Text safe area */
-.text-area {
-  position: absolute;
-  bottom: 80px;
-  left: 40px;
-  right: 40px;
-  text-align: center;
-}
-
-.text-area h2 {
-  font-size: 22px;
+.main {
   color: #7a2e2e;
+  font-weight: 700;
 }
 
-.text-area p {
-  font-size: 15px;
-  color: #5a3b2e;
-  line-height: 1.6;
+/* Subtitle */
+.subtitle {
+  margin: 20px 0;
+  color: #8b6f5c;
+  font-size: 18px;
 }
 
-button {
-  padding: 10px 20px;
-  background: #7a2e2e;
-  color: white;
-  border: none;
-  border-radius: 10px;
+/* Button */
+.upload-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 2px solid #c49a6c;
+  border-radius: 12px;
+  color: #7a2e2e;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  background: #c49a6c;
+  color: white;
+}
+
+.upload-btn input {
+  display: none;
 }

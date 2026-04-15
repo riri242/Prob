@@ -2,52 +2,28 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>Poster Generator</title>
+  <title>برنامج الملكية الفكرية</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Cropper -->
-  <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
-  <script src="https://unpkg.com/cropperjs"></script>
-
-  <!-- Export -->
-  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="card">
 
-  <h1>مولد البوست</h1>
+  <h1>
+    <span class="light">تك برو</span>
+    <span class="main">توك</span>
+  </h1>
 
-  <input type="file" id="upload">
-  <input type="text" id="title" placeholder="العنوان">
-  <textarea id="desc" placeholder="الوصف"></textarea>
+  <p class="subtitle">أضف إطار الفعالية لصورتك</p>
 
-  <!-- Crop Area -->
-  <div class="crop-container">
-    <img id="cropImage">
-  </div>
-  <button onclick="cropImage()">تأكيد القص</button>
-
-  <!-- Final Canvas -->
-  <div class="canvas" id="canvas">
-    <img id="finalImage">
-
-    <img src="Pallate.png" class="overlay">
-
-    <div class="text-area">
-      <h2 id="outTitle">العنوان</h2>
-      <p id="outDesc">الوصف</p>
-    </div>
-  </div>
-
-  <button onclick="download()">تحميل</button>
+  <label class="upload-btn">
+    اختر صورة
+    <input type="file">
+  </label>
 
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
