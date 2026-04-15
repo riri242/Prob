@@ -18,12 +18,20 @@ upload.onchange = (e) => {
 
   cropper = new Cropper(cropImg, {
     aspectRatio: 4 / 5,
-    viewMode: 1
+    viewMode: 1,
+
+    /* 🔥 أهم جزء: تحديث تلقائي */
+    crop() {
+      updatePreview();
+    }
   });
+
+  // أول عرض
+  setTimeout(updatePreview, 200);
 };
 
-/* Crop */
-function applyCrop() {
+/* تحديث مباشر */
+function updatePreview() {
   if (!cropper) return;
 
   const canvas = cropper.getCroppedCanvas({
@@ -34,7 +42,7 @@ function applyCrop() {
   finalImage.src = canvas.toDataURL("image/png");
 }
 
-/* Download */
+/* تحميل */
 function download() {
   if (!finalImage.src) return;
 
