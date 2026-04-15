@@ -1,7 +1,7 @@
 let cropper;
 
 const upload = document.getElementById("upload");
-const cropImage = document.getElementById("cropImage");
+const cropImg = document.getElementById("cropImage");
 
 const titleInput = document.getElementById("title");
 const descInput = document.getElementById("desc");
@@ -14,26 +14,29 @@ const finalImage = document.getElementById("finalImage");
 /* Upload + Crop */
 upload.onchange = (e) => {
   const file = e.target.files[0];
-  const url = URL.createObjectURL(file);
+  if (!file) return;
 
-  cropImage.src = url;
+  const url = URL.createObjectURL(file);
+  cropImg.src = url;
 
   if (cropper) cropper.destroy();
 
-  cropper = new Cropper(cropImage, {
+  cropper = new Cropper(cropImg, {
     aspectRatio: 4 / 5,
-    viewMode: 1,
+    viewMode: 1
   });
 };
 
-/* Apply crop */
-function cropImage() {
+/* APPLY CROP (تم تغيير الاسم هنا أهم شيء) */
+function applyCrop() {
+  if (!cropper) return;
+
   const canvas = cropper.getCroppedCanvas({
     width: 1080,
     height: 1350
   });
 
-  finalImage.src = canvas.toDataURL();
+  finalImage.src = canvas.toDataURL("image/png");
 }
 
 /* Text binding */
@@ -52,7 +55,7 @@ function download() {
   }).then(canvas => {
     const link = document.createElement("a");
     link.download = "post.png";
-    link.href = canvas.toDataURL();
+    link.href = canvas.toDataURL("image/png");
     link.click();
   });
 }
