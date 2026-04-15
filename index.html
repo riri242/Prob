@@ -5,8 +5,9 @@
   <title>فعالية الملكية الفكرية</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
   <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
     <span class="main">الملكية الفكرية</span>
   </h1>
 
-  <p class="subtitle">أضف صورة وتعدّلها مباشرة</p>
+  <p class="subtitle">ارفع صورتك وسيتم تطبيق القالب عليها</p>
 
   <label class="upload-btn">
     اختر صورة
@@ -27,21 +28,25 @@
 
   <br><br>
 
-  <!-- صورة القص -->
-  <img id="cropImage" style="max-width:100%; display:none;">
+  <!-- 🔥 هذا هو القالب النهائي -->
+  <div id="canvas">
 
-  <br><br>
+    <div class="image-box">
+      <img id="finalImage">
+    </div>
 
-  <!-- النتيجة -->
-  <img id="finalImage" style="max-width:100%; border-radius:12px;">
+    <div class="frame"></div>
 
-  <br><br>
+  </div>
 
-  <button class="upload-btn" onclick="download()">تحميل الصورة</button>
+  <br>
+
+  <button class="upload-btn" onclick="downloadImage()">
+    تحميل الصورة
+  </button>
 
 </div>
 
-<script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
 <script src="script.js"></script>
 
 </body>

@@ -10,7 +10,7 @@ body {
 
 .card {
   width: 500px;
-  padding: 50px;
+  padding: 40px;
   border-radius: 25px;
   text-align: center;
 
@@ -26,19 +26,12 @@ h1 {
   font-size: 40px;
 }
 
-.light {
-  color: #6d6d6d;
-  font-weight: 400;
-}
-
-.main {
-  color: #7a2e2e;
-  font-weight: 700;
-}
+.light { color: #6d6d6d; }
+.main { color: #7a2e2e; }
 
 .subtitle {
-  margin: 20px 0;
   color: #8b6f5c;
+  margin-bottom: 20px;
 }
 
 .upload-btn {
@@ -46,16 +39,41 @@ h1 {
   padding: 15px 30px;
   border: 2px solid #c49a6c;
   border-radius: 12px;
-  color: #7a2e2e;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.upload-btn:hover {
-  background: #c49a6c;
-  color: white;
+  color: #7a2e2e;
 }
 
 .upload-btn input {
   display: none;
+}
+
+/* 🔥 القالب */
+#canvas {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: white;
+}
+
+/* الصورة */
+.image-box {
+  width: 100%;
+  height: 100%;
+}
+
+#finalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* إطار الفعالية */
+.frame {
+  position: absolute;
+  inset: 0;
+  border: 5px solid #c49a6c;
+  pointer-events: none;
 }
